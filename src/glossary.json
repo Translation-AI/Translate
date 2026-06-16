@@ -1,0 +1,25 @@
+{
+  "en->ja": {
+    "Hello": "こんにちは",
+    "Thank you": "ありがとう",
+    "Save": "保存",
+    "Cancel": "キャンセル",
+    "OK": "OK",
+    "Settings": "設定",
+    "Login": "ログイン",
+    "Logout": "ログアウト",
+    "Search": "検索",
+    "Submit": "送信"
+  },
+  "ja->en": {
+    "こんにちは": "Hello",
+    "ありがとう": "Thank you",
+    "保存": "Save",
+    "キャンセル": "Cancel",
+    "設定": "Settings",
+    "ログイン": "Login",
+    "ログアウト": "Logout",
+    "検索": "Search",
+    "送信": "Submit"
+  }
+}

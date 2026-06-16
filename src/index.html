@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero-Cost Translate — Client-Side</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+<header>
+  <h1>🌐 Zero-Cost Translate</h1>
+  <p class="sub">クライアントRAMで動く翻訳 — GitHub Pages + Transformers.js + Chrome内蔵AI</p>
+  <div id="engineStatus" class="engine-status">エンジン初期化中...</div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="row">
+      <select id="src">
+        <option value="auto">自動検出</option>
+      </select>
+      <button id="swap" title="入替">⇄</button>
+    </div>
+    <textarea id="srcText" placeholder="ここに翻訳したい文を入力..." maxlength="5000"></textarea>
+    <div class="row meta-row">
+      <span id="srcMeta">0 / 5000</span>
+      <button id="go">翻訳</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="row">
+      <select id="tgt"></select>
+      <button id="copy" title="コピー">📋</button>
+    </div>
+    <textarea id="tgtText" placeholder="翻訳結果..." readonly></textarea>
+    <div id="tgtMeta" class="meta">—</div>
+  </section>
+</main>
+
+<section class="settings">
+  <details>
+    <summary>⚙ 設定 / プライバシー</summary>
+    <label><input type="checkbox" id="useServerApi"> サーバーAPI も使用（プライバシー: テキストが外部送信されます）</label>
+    <label>サーバーAPI URL: <input type="text" id="apiUrl" placeholder="https://your-api.example.com" style="width:300px"></label>
+    <button id="clearCache">IndexedDB キャッシュをクリア</button>
+    <p class="hint">
+      デフォルトでは入力テキストは <strong>あなたのブラウザ内のみ</strong> で処理されます。<br>
+      モデルファイルだけが Hugging Face CDN からダウンロードされます（初回のみ ~80MB/言語ペア）。
+    </p>
+  </details>
+</section>
+
+<footer>
+  <a href="https://github.com/your-org/translate-site">GitHub</a> ·
+  <a href="./docs/">API ドキュメント</a> ·
+  Powered by Transformers.js + ONNX Runtime Web
+</footer>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
