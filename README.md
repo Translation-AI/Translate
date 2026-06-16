@@ -1,4 +1,4 @@
-# Zero-Cost Translate v2 — 2 系統アーキテクチャ
+# Zero-Cost Translate
 
 > **Web UI はクライアントRAMで翻訳（GitHub Pages）／API はサーバー側で提供**
 
